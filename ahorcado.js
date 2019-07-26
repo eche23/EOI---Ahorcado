@@ -1,35 +1,52 @@
-var lista = [["Star Wars", ""], ["Titanic", ""], ["Fast and Furious", ""]];
-var pelicula = "";
-var guiones = [];
+var list = [["Star Wars", ""], ["Titanic", ""], ["Fast and Furious", ""]];
 
-console.log(lista.length);
+var position;
+var helps = 0;
+var lowBar = [];
 
-const elegirPelicula = lista =>{
-    var i = parseInt(Math.random() * (lista.length));
-    pelicula = lista[i][0];
-    console.log(pelicula);
 
+
+const selectFilm = list =>{
+    position = parseInt(Math.random() * (list.length));
 }
 
-elegirPelicula(lista);
+selectFilm(list);
 
-const dibujarGuiones = pelicula => {
-    var peliculaArray = pelicula.split("");
-    peliculaArray.forEach(array => {
+const drawLowBar = position => {
+    let film = list[position][helps].split("");
+    film.forEach(array => {
         if(array == " "){
-            guiones.push(" ");
+            lowBar.push(" ");
+            
         }else{
-            guiones.push("_");
+            lowBar.push("_");
         }
         
     });
-    var a = guiones.split("")
-    console.log();
-    //document.getElementById("guiones").innerHTML = guiones.split("");
+    document.getElementById("low-bar").innerHTML += lowBar.join('');
     
 }
 
-dibujarGuiones(pelicula);
+drawLowBar(position);
+
+var time = 60;
+function timmer() {
+    
+    document.getElementById("timmer").innerHTML = time + " s.";
+    if(time == 0){
+
+    }else{
+        time -= 1;
+        setTimeout("timmer()", 1000);
+    }
+
+}
+
+timmer();
+
+function help (position) {
+    time -= 5;
+}
 
 function teclado() {
     var abecedario = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
