@@ -1,6 +1,7 @@
 var list = [["Star Wars", ""], ["Titanic", ""], ["Fast and Furious", ""]];
 
 var position;
+var abecedario = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
 var helps = 0;
 var lowBar = [];
 var numHelps = 2;
@@ -29,30 +30,32 @@ const drawLowBar = position => {
 
 
 function timmer() {
-    if(time == 10 && numHelps == 1) document.getElementById("btn-help").disabled = "true";
-    if(time == 5 && numHelps == 2) document.getElementById("btn-help").disabled = "true";
+    if(time == 10 && numHelps == 1) document.getElementById("btn-help").disabled = true;
+    if(time == 5 && numHelps == 2) document.getElementById("btn-help").disabled = true;
     document.getElementById("timmer").innerHTML = "Time: " + time + " s.";
     if(time == 0){
         
-        var abecedario = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+        document.getElementById("fin").innerHTML = "END";
         var arrayAbecedario = abecedario.split("");
         arrayAbecedario.forEach(array => {
             document.getElementById(array).disabled = true;
         });
-        document.getElementById("fin").innerHTML = "END";
         
         setTimeout(function() {
-            document.getElementById("teclado").innerHTML = "";
             initial();
         }, 2000);
         
         
     }else{
+        //if(lives == 0) break;
+        console.log(lives);
         time -= 1;
         setTimeout("timmer()", 1000);
+        
     }
 
 }
+
 
 
 
@@ -65,7 +68,7 @@ function help () {
     }else if(numHelps == 1){
         time -= 10;
         numHelps = 0;
-        document.getElementById("btn-help").disabled = "true";
+        document.getElementById("btn-help").disabled = true;
         document.getElementById("help").innerHTML = "Ayuda 2";
         
     } else {
@@ -75,12 +78,10 @@ function help () {
 
 }
 
-function teclado() {
-    var abecedario = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+function teclado() {    
     var arrayAbecedario = abecedario.split("");
-    console.log(arrayAbecedario);
     arrayAbecedario.forEach(array => {
-        document.getElementById("teclado").innerHTML += "<button value='" + array + "' onclick='selectLetter(\"" + array + "\")' class='letra' id='"+array+"'>" + array + "</button>";
+        document.getElementById("teclado").innerHTML += "<button value='" + array + "' onclick='selectLetter(\"" + array + "\")' class='letter' id='"+array+"'>" + array + "</button>";
     });
 }
 
@@ -104,17 +105,30 @@ const selectLetter = letter => {
         lives -= 1;
         document.getElementById("dummy").innerHTML = "<img src='img/ahorcado_"+lives+".png' alt='' id='image"+lives+"'>"
         if(lives == 0){
-            var abecedario = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
             var arrayAbecedario = abecedario.split("");
             arrayAbecedario.forEach(array => {
                 document.getElementById(array).disabled = true;
             });
             document.getElementById("fin").innerHTML = "END";
             setTimeout(function() {
-                document.getElementById("teclado").innerHTML = "";
                 initial();
             }, 2000);
         }
+    }
+    checkEnd();
+}
+
+function checkEnd() {
+    if(lowBar.indexOf("_") == -1){
+        document.getElementById("fin").innerHTML = "Congratulations";
+        var arrayAbecedario = abecedario.split("");
+        arrayAbecedario.forEach(array => {
+            document.getElementById(array).disabled = true;
+        });
+        document.getElementById("btn-help").disabled = true;
+        setTimeout(function() {
+            initial();
+        }, 2000);
     }
 }
 
@@ -123,13 +137,18 @@ function initial(){
     numHelps = 2;
     lives = 6;
     lowBar = [];
+    document.getElementById("teclado").innerHTML = "";
+    document.getElementById("fin").innerHTML = "";
+    document.getElementById("help").innerHTML = "";
+    document.getElementById("dummy").innerHTML = "<img src='img/ahorcado_"+lives+".png' alt='' id='image"+lives+"'>"
+    document.getElementById("btn-help").disabled = false;
+    
+    
     teclado();
     selectFilm(list);
     drawLowBar(position);
     timmer();
-    document.getElementById("fin").innerHTML = "";
-    document.getElementById("help").innerHTML = "";
-    document.getElementById("dummy").innerHTML = "<img src='img/ahorcado_"+lives+".png' alt='' id='image"+lives+"'>"
+    
     
 
 }
