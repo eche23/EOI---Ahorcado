@@ -47,8 +47,6 @@ function timmer() {
         
         
     }else{
-        //if(lives == 0) break;
-        console.log(lives);
         time -= 1;
         setTimeout("timmer()", 1000);
         
@@ -102,8 +100,9 @@ const selectLetter = letter => {
         }
         document.getElementById("low-bar").innerHTML = lowBar.join('');
     }else{
+        document.getElementById("image"+lives).style.visibility = "hidden";
         lives -= 1;
-        document.getElementById("dummy").innerHTML = "<img src='img/ahorcado_"+lives+".png' alt='' id='image"+lives+"'>"
+        document.getElementById("image"+lives).style.visibility = "visible";
         if(lives == 0){
             var arrayAbecedario = abecedario.split("");
             arrayAbecedario.forEach(array => {
@@ -115,6 +114,8 @@ const selectLetter = letter => {
             }, 2000);
         }
     }
+    console.log(lives);
+    
     checkEnd();
 }
 
@@ -140,9 +141,10 @@ function initial(){
     document.getElementById("teclado").innerHTML = "";
     document.getElementById("fin").innerHTML = "";
     document.getElementById("help").innerHTML = "";
-    document.getElementById("dummy").innerHTML = "<img src='img/ahorcado_"+lives+".png' alt='' id='image"+lives+"'>"
+    //document.getElementById("dummy").innerHTML = "<img src='img/ahorcado_"+lives+".png' alt='' id='image"+lives+"'>"
     document.getElementById("btn-help").disabled = false;
     
+    document.getElementById("image"+lives).style.visibility = "visible";
     
     teclado();
     selectFilm(list);
