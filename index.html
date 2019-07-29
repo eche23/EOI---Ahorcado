@@ -5,30 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>HOLA</h1>
-    <p id="lives"></p>
-    <h2 id="low-bar"></h2>
-    <p id="timmer"></p>
-    <p id="numHelps"></p>
-    <p id="help"></p>
-    <div class="" id="teclado"></div>
-    <p id="fin"></p>
-    <button id="btn-help" onclick="help()">HELP</button>
-    <br>
-    <picture>
-        <img src="img/ahorcado_6.png" alt="" id="image6">
-        <img src="img/ahorcado_5.png" alt="" id="image5">
-        <img src="img/ahorcado_4.png" alt="" id="image4">
-        <img src="img/ahorcado_3.png" alt="" id="image3">
-        <img src="img/ahorcado_2.png" alt="" id="image2">
-        <img src="img/ahorcado_1.png" alt="" id="image1">
-        <img src="img/ahorcado_0.png" alt="" id="image0">
-    </picture>
-
+    <header>
+        <h1>HOLA</h1>
+        <p id="timmer"></p>
+    </header>
     
+    <div class="container row">
+        <div class="images col-12 col-md-6">
+            <div class="row">
+                <img src="img/live.jpg" alt="" id="live1" class="live">
+                <img src="img/live.jpg" alt="" id="live2" class="live">
+                <img src="img/live.jpg" alt="" id="live3" class="live">
+                <img src="img/live.jpg" alt="" id="live4" class="live">
+                <img src="img/live.jpg" alt="" id="live5" class="live">
+                <img src="img/live.jpg" alt="" id="live6" class="live">
+            </div>
+            <div class="row">
+                <img src="img/ahorcado_6.png" alt="" id="image6" class="dummy">
+                <img src="img/ahorcado_5.png" alt="" id="image5" class="dummy">
+                <img src="img/ahorcado_4.png" alt="" id="image4" class="dummy">
+                <img src="img/ahorcado_3.png" alt="" id="image3" class="dummy">
+                <img src="img/ahorcado_2.png" alt="" id="image2" class="dummy">
+                <img src="img/ahorcado_1.png" alt="" id="image1" class="dummy">
+                <img src="img/ahorcado_0.png" alt="" id="image0" class="dummy">
+            </div>
+        </div>
+        <div class="content col-12 col-md-6">
+            <p id="lives"></p>
+            <h2 id="low-bar"></h2>
+            
+            
+            
+            <div class="" id="teclado"></div>
+            <p id="fin"></p>
+            <div class="row">
+                <button id="btn-help" onclick="help()">HELP</button>
+                <p>HELPS: </p>
+                <p id="num-helps"></p>
+                <p id="help"></p>
+            </div>
+            <p id="note">
+                *Help 1 is blocked if the time is less than 5 second. Help 2 is blocked if the time is less than 10 second.
+            </p>
+
+            <br>
+        </div>
+            
+            
+        
+    </div>
     <script src="./ahorcado.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 </html>

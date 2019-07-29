@@ -1,4 +1,88 @@
-img{
-    visibility: hidden;
-    position: absolute;
+*{
+    margin: 0;
+}
+
+html{
+    height: 100%;
+}
+
+.row{
+    margin: 0;
+    max-width: 100%;
+    display: flex;
+}
+
+body{
+    height: 100%;
+    
+}
+
+.col-md-6{
+    height: 80%;
+}
+
+header{
+    background: #633333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+#timmer{
+    margin: auto 10px;
+}
+
+.container{
+    margin-top: 20px;
+
+}
+
+.live{
+    width: 50px;
+    height: 50px;
+
+}
+
+h2{
+    letter-spacing: 6px;
+}
+
+button {
+    width: 100px;
+    margin: 5px;
+    border-radius: 8px;
+    border: 0;
+    background: gray;
+    color: white;
+
+}
+
+.content{
+    margin: auto;
+}
+.dummy{
+    max-width: 100%;
+    display: none;
+    max-height: 500px;
+    
+}
+
+.row p{
+    margin: auto 10px;
+}
+
+#note{
+    font-size: 12px;
+}
+
+.letter {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+@media all and (max-width:768px) {
+    .dummy{
+        max-height: 300px;
+    }
 }
