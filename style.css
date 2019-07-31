@@ -10,6 +10,7 @@ html{
     margin: 0;
     max-width: 100%;
     display: flex;
+    padding: 0;
 }
 
 body{
@@ -26,20 +27,18 @@ header{
     color: white;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 #timmer{
     margin: auto 10px;
 }
 
-.container{
-    margin-top: 20px;
-
-}
 
 .live{
     width: 50px;
     height: 50px;
+    visibility: hidden;
 
 }
 
@@ -79,6 +78,35 @@ button {
     width: 40px;
     height: 40px;
     border-radius: 50px;
+}
+
+.list button{
+    width: auto;
+}
+
+#otherSearch {
+    display: none;
+}
+
+.overlay{
+    margin: 0;
+    height: 80%;
+    width: 100%;
+    position: absolute;
+    background: rgba(173,163,163, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup{
+    background: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    border-radius: 20px;
 }
 
 @media all and (max-width:768px) {

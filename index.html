@@ -35,29 +35,51 @@
             </div>
         </div>
         <div class="content col-12 col-md-6">
-            <p id="lives"></p>
-            <h2 id="low-bar"></h2>
             
+            <h2 id="low-bar"></h2>
+            <div class="info row">
+                <p id="year"></p>
+                <p id="rating"></p>
+            </div>
             
             
             <div class="" id="teclado"></div>
             <p id="fin"></p>
             <div class="row">
                 <button id="btn-help" onclick="help()">HELP</button>
-                <p>HELPS: </p>
                 <p id="num-helps"></p>
                 <p id="help"></p>
             </div>
             <p id="note">
                 *Help 1 is blocked if the time is less than 5 second. Help 2 is blocked if the time is less than 10 second.
             </p>
-
+            <button id="solution" onclick="solution()">Solution</button>
             <br>
+            <div class="row">
+                <h3 id="points"></h3>
+            </div>
+
         </div>
             
             
-        
+        <div class="overlay" id="select">
+            <div class="popup row">
+                <h3 id="select-film">Select your Film </h3>
+                <div class="list" id="list">
+
+                </div>
+                <div class="container-input row">
+                    <input type="text" placeholder="FILM" id="film">
+                    <button id="search" class="search" onclick="select()">Search</button>
+                </div>
+                <button id="otherSearch" onclick="otherSearch()">Other Search</button>
+            </div>
+        </div>
+
+
     </div>
+
+
     <script src="./ahorcado.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
