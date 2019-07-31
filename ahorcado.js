@@ -316,7 +316,10 @@ function select(){
         return responde.json().then(function(data){
             var busqueda = data.Search.forEach(array => {
                 var title = array.Title;
-                document.getElementById("list").innerHTML += "<button value='" + title + "' onclick='selectFilm(\"" + title + "\")' class='letter' id='"+title+"'>" + title + "</button>";
+                let poster = array.Poster;
+                console.log(array);
+                document.getElementById("list").innerHTML += "<div class='list-film'> <img id='poster' src="+poster+"><button value='" + title + "' onclick='selectFilm(\"" + title + "\")' class='letter' id='"+title+"'>" + title + "</button></div>";
+                //"<button value='" + title + "' onclick='selectFilm(\"" + title + "\")' class='letter' id='"+title+"'>" + title + "</button>";
                 
             });
             

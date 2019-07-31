@@ -103,10 +103,21 @@ button {
     background: white;
     padding: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    max-width: 500px;
+    max-width: 800px;
     border-radius: 20px;
+    flex: 1;
+    
+}
+
+.list{
+    display: flex;
+    
+}
+
+.list-film{
+    margin: 10px;
 }
 
 @media all and (max-width:768px) {
@@ -114,3 +125,9 @@ button {
         max-height: 300px;
     }
 }
+
+#poster{
+    height: 100px;
+    width: 60px;
+}
+
